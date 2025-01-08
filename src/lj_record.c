@@ -1066,7 +1066,7 @@ static BCReg rec_mm_prep(jit_State *J, ASMFunction cont)
 /* Record metamethod lookup. */
 int lj_record_mm_lookup(jit_State *J, RecordIndex *ix, MMS mm)
 {
-  RecordIndex mix;
+  RecordIndex mix = {0};
   GCtab *mt;
   if (tref_istab(ix->tab)) {
     mt = tabref(tabV(&ix->tabv)->metatable);
